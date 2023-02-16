@@ -26,19 +26,29 @@ login.addEventListener('click', () => {
     }
 });
 
-// LOGIN FORM
+// LOGIN & SIGIN FORM
 
 const formularioLogin = document.querySelector('#login-form');
 const loginEmail = document.querySelector('#loginEmail');
 const loginPassword = document.querySelector('#loginPassword');
+// SINGIN
+const formularioSingin = document.querySelector('#singin-form');
+const singinNombre = document.querySelector('#singinNombre');
+const singinApellidos = document.querySelector('#singinApellidos');
+const singinEmail = document.querySelector('#singinEmail');
+const singinPassword = document.querySelector('#singinPassword1');
+const repetirPassword = document.querySelector('#singinPassword2');
 window.addEventListener('load', () => {
     formularioLogin.addEventListener('submit', function (e) {
         e.preventDefault();
         enviarFormulario(loginEmail.value, loginPassword.value);
         // enviarFormulario('prueba.prueba@iescamp.es', 'prueba');
     });
+    formularioSingin.addEventListener('submit', function (e) {
+        e.preventDefault();
+        registrarUsuario(singinNombre.value, singinApellidos.value, singinEmail.value, singinPassword.value);
+    });
 });
-
 function enviarFormulario (param1, param2) {
     const datos = new FormData();
     datos.append('opcion', 'SR');
@@ -55,18 +65,47 @@ function enviarFormulario (param1, param2) {
                 // eslint-disable-next-line no-undef
                 Swal.fire({
                     title: 'COOPbyDWC',
-                    text: 'Debe iniciar sesión!',
+                    text: 'EMAIL o PASSWORD incorrecto',
                     icon: 'warning',
                     button: 'Continuar'
                 }).then(function (result) {
                     window.location = 'index.html';
                 });
             } else if (data != null) {
-                mostrar(data);
+                window.location = 'stock.html';
             }
         });
 };
-function mostrar (e) {
-    console.log(e);
-    window.location = 'stock.html';
-}
+function registrarUsuario (param1, param2, param3, param4) {
+    if (singinPassword.value === repetirPassword.value) {
+        const datos = new FormData();
+        datos.append('opcion', 'RS');
+        datos.append('nombre', param1);
+        datos.append('apellidos', param2);
+        datos.append('email', param3);
+        datos.append('password', param4);
+        const url = 'php/coop.php';
+        fetch(url, {
+            method: 'POST',
+            body: datos
+        })
+            .then((data) => {
+                // eslint-disable-next-line no-undef
+                Swal.fire({
+                    title: 'COOPbyDWC',
+                    text: 'USUARIO REGISTRADO CON EXITO',
+                    icon: 'success',
+                    button: 'Continuar'
+                }).then(function () {
+                    window.location = 'index.html';
+                });
+            });
+    }
+    // eslint-disable-next-line no-undef
+    Swal.fire({
+        title: 'COOPbyDWC',
+        text: 'LAS CONTRASEÑAS DEBEN COINCIDIR',
+        icon: 'warning',
+        button: 'Continuar'
+    });
+};
