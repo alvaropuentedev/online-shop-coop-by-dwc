@@ -13,7 +13,7 @@
   mysqli_query($conexion,"SET NAMES 'utf8'");
   mysqli_select_db($conexion,$basedatos) or die(mysqli_error($conexion));
  
- 
+
   // --  párametro opción para determinar la select a realizar -------
   if (isset($_GET['opcion'])) $opc=$_GET['opcion'];
   else if (isset($_POST['opcion'])) $opc=$_POST['opcion'];
