@@ -1,3 +1,20 @@
-body{
-    background: #223;
+body {
+  background: #223;
+}
+#dialog-singin, #dialog-login {
+    width: 30%;
+}
+#nav-container {
+    display: flex;
+    justify-content: end;
+}
+main {
+  color: azure;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+    font-size: 200px;
 }

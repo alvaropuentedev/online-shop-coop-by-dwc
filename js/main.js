@@ -7,12 +7,6 @@ const dialogSingin = document.querySelector('#dialog-singin');
 // VISIBLE OR HIDDEN FOR EACH OPCION
 
 inicio.addEventListener('click', () => {
-    /* if (dialogLogin.style.visibility === 'visible') {
-        dialogLogin.style.visibility = 'hidden';
-    }
-    if (dialogSingin.style.visibility === 'visible') {
-        dialogSingin.style.visibility = 'hidden';
-    } */
     window.location = 'index.html';
 });
 singin.addEventListener('click', () => {

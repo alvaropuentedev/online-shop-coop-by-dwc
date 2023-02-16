@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -13,12 +13,12 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand font-weight-bold font-italic" href="#">CoopByDWC</a>
+    <a class="navbar-brand font-weight-bold font-italic" href="index.html">CoopByDWC</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+    <div id="nav-container" class="collapse navbar-collapse ml-auto" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a id="inicio" class="nav-link" href="#">Inicio</a>
@@ -32,6 +32,9 @@
       </ul>
     </div>
   </nav>
+  <main>
+    <h1>CoopByDWC</h1>
+  </main>
   <!-- FORMULARIO LOGIN -->
   <dialog id="dialog-login" style="visibility: hidden" class="mt-5">
     <form id="login-form">
@@ -52,23 +55,24 @@
     <form id="singin-form">
       <div class="form-group">
         <label for="singinNombre">Nombre</label>
-        <input type="text" class="form-control" id="singinNombre" placeholder="Nombre">
+        <input type="text" class="form-control" id="singinNombre" placeholder="Nombre" required>
       </div>
       <div class="form-group">
         <label for="singinApellidos">Apellidos</label>
-        <input type="text" class="form-control" id="singinApellidos" placeholder="Apellidos">
+        <input type="text" class="form-control" id="singinApellidos" placeholder="Apellidos" required>
       </div>
       <div class="form-group">
         <label for="singinEmail1">Email address</label>
-        <input type="email" class="form-control" id="singinEmail1" aria-describedby="emailHelp" placeholder="email">
+        <input type="email" class="form-control" id="singinEmail1" aria-describedby="emailHelp" placeholder="email"
+          required>
       </div>
       <div class="form-group">
         <label for="singinPassword2">Password</label>
-        <input type="password" class="form-control" id="singinPassword1" placeholder="Contraseña">
+        <input type="password" class="form-control" id="singinPassword1" placeholder="Contraseña" required>
       </div>
       <div class="form-group">
         <label for="singinPassword2">Repita el Password</label>
-        <input type="password" class="form-control" id="singinPassword2" placeholder="Contraseña">
+        <input type="password" class="form-control" id="singinPassword2" placeholder="Repita la contraseña" required>
       </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
