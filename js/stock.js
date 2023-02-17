@@ -18,14 +18,11 @@ function showStock () {
         .then((articles) => {
             for (let i = 0; i < articles.length; i++) {
                 const element = document.createElement('div');
-                element.setAttribute('class', 'col-sm-4');
                 container.appendChild(element);
-                const divArticle = document.createElement('div', 'element');
-                element.appendChild(divArticle);
                 const imgArticle = document.createElement('img');
                 imgArticle.id = 'img-article';
                 imgArticle.src = 'img/' + articles[i].imagen;
-                divArticle.appendChild(imgArticle);
+                element.appendChild(imgArticle);
             }
         });
 }

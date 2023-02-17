@@ -15,16 +15,19 @@ main {
   justify-content: center;
   align-items: center;
 }
-h1 {
+#titulo-index {
     font-size: 200px;
 }
-.container {
-  display: grid;
-  justify-self: center;
+#titulo-venta {
+  text-align: center;
+  color: azure;
+  font-size: 80px;
+  margin-top: 5%;
 }
 .gallery-container {
   display: flex;
-  margin:auto;
+  gap: 10px;
+  justify-content: center;
   margin-top: 10%;
 }
 .gallery-container img {
@@ -33,6 +36,10 @@ h1 {
   padding: 15px;
 }
 
-.gallery-container img:hover {
+.gallery-container div{
+  background: #fff;
+  width: fit-content;
+}
+.gallery-container div:hover {
   translate: 0px -6px;
 }
