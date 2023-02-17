@@ -49,6 +49,8 @@ window.addEventListener('load', () => {
         registrarUsuario(singinNombre.value, singinApellidos.value, singinEmail.value, singinPassword.value);
     });
 });
+
+// FORMULARIO LOGIN
 function enviarFormulario (param1, param2) {
     const datos = new FormData();
     datos.append('opcion', 'SR');
@@ -77,6 +79,8 @@ function enviarFormulario (param1, param2) {
             }
         });
 };
+
+// FORMULARIO SINGIN
 function registrarUsuario (param1, param2, param3, param4) {
     if (singinPassword.value === repetirPassword.value) {
         const datos = new FormData();
