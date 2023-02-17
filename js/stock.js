@@ -1,7 +1,9 @@
-const inicio = document.querySelector('#inicio');
-const singin = document.querySelector('#singin');
-const login = document.querySelector('#login');
+const logout = document.querySelector('#logout');
+const usuario = sessionStorage.getItem('usuario');
+window.addEventListener('load', function () {
+    document.querySelector('#navNombreUser').innerHTML = usuario;
+});
 
-inicio.addEventListener('click', () => {
-    window.location = 'index.html';
+logout.addEventListener('click', function () {
+    this.sessionStorage.removeItem('usuario');
 });

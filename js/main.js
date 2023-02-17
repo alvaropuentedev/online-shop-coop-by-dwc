@@ -72,6 +72,7 @@ function enviarFormulario (param1, param2) {
                     window.location = 'index.html';
                 });
             } else if (data != null) {
+                sessionStorage.setItem('usuario', data[0].nombre);
                 window.location = 'stock.html';
             }
         });
