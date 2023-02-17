@@ -1,13 +1,17 @@
 body {
   background: #223;
 }
-#dialog-singin, #dialog-login {
-    width: 30%;
+
+#dialog-singin,
+#dialog-login {
+  width: 30%;
 }
+
 #nav-container {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
+
 main {
   color: azure;
   margin-top: 5%;
@@ -15,31 +19,37 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 #titulo-index {
-    font-size: 200px;
+  font-size: 200px;
 }
+
 #titulo-venta {
   text-align: center;
   color: azure;
   font-size: 80px;
   margin-top: 5%;
 }
+
+/* GALLERY STOCK.HTML */
 .gallery-container {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 10%;
+  display: grid;
+  grid-gap: 40px 20px;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  padding: 40px 0;
 }
+
 .gallery-container img {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   padding: 15px;
 }
 
-.gallery-container div{
+#div-article {
   background: #fff;
-  width: fit-content;
-}
-.gallery-container div:hover {
-  translate: 0px -6px;
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  margin: auto;
+  border-radius: 2%;
 }
