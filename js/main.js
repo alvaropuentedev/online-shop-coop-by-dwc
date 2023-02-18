@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
 });
 
 // FORMULARIO LOGIN
-function enviarFormulario(param1, param2) {
+function enviarFormulario (param1, param2) {
     const datos = new FormData();
     datos.append('opcion', 'SR');
     datos.append('email', param1);

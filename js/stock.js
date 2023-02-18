@@ -34,7 +34,8 @@ function showStock () {
                     element.appendChild(articleName);
                     // PRICE
                     const precio = document.createElement('h4');
-                    precio.textContent = articles[i].precio + '€';
+                    const precioParse = parseFloat(articles[i].precio).toFixed(2);
+                    precio.textContent = precioParse + ' €';
                     element.appendChild(precio);
                     // DIV BUTTON
                     const divButton = document.createElement('div');
@@ -54,6 +55,7 @@ function showStock () {
 // BUY FUCTION
 function buyArticle (e) {
     const idArticle = e.target.id;
+
 
     // eslint-disable-next-line no-undef
     swal.fire({
