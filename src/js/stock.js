@@ -70,7 +70,7 @@ function buyArticle (e) {
                 icon: 'success',
                 button: 'Continuar'
             }).then(function () {
-                window.location = 'stock.html';
+                window.location.reload();
             });
         });
 }

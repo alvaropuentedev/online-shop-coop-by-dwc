@@ -63,7 +63,7 @@ function enviarFormulario (param1, param2) {
                     icon: 'warning',
                     button: 'Continuar'
                 }).then(function () {
-                    window.location = 'index.html';
+                    window.location.reload();
                 });
             } else if (data != null) {
                 sessionStorage.setItem('usuario', data[0].nombre);
@@ -95,7 +95,7 @@ function registrarUsuario (param1, param2, param3, param4) {
                     icon: 'success',
                     button: 'Continuar'
                 }).then(function () {
-                    window.location = 'index.html';
+                    window.location.reload();
                 });
             });
     }
