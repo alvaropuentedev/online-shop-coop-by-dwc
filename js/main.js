@@ -1,21 +1,21 @@
 const inicio = document.querySelector('#inicio');
-const singin = document.querySelector('#signin');
+const signin = document.querySelector('#signin');
 const login = document.querySelector('#login');
 const dialogLogin = document.querySelector('#dialog-login');
-const dialogSingin = document.querySelector('#dialog-signin');
+const dialogSignin = document.querySelector('#dialog-signin');
 
 // VISIBLE OR HIDDEN FOR EACH OPCION
 
 inicio.addEventListener('click', () => {
     window.location = 'index.html';
 });
-singin.addEventListener('click', () => {
-    dialogSingin.setAttribute('open', 'true');
+signin.addEventListener('click', () => {
+    dialogSignin.setAttribute('open', 'true');
     dialogLogin.removeAttribute('open');
 });
 login.addEventListener('click', () => {
     dialogLogin.setAttribute('open', 'true');
-    dialogSingin.removeAttribute('open');
+    dialogSignin.removeAttribute('open');
 });
 
 // LOGIN & SIGIN FORM
@@ -23,27 +23,27 @@ login.addEventListener('click', () => {
 const formularioLogin = document.querySelector('#login-form');
 const loginEmail = document.querySelector('#loginEmail');
 const loginPassword = document.querySelector('#loginPassword');
-// SINGIN
-const formularioSingin = document.querySelector('#singin-form');
-const singinNombre = document.querySelector('#singinNombre');
-const singinApellidos = document.querySelector('#singinApellidos');
-const singinEmail = document.querySelector('#singinEmail');
-const singinPassword = document.querySelector('#singinPassword1');
-const repetirPassword = document.querySelector('#singinPassword2');
+// signin
+const formulariosignin = document.querySelector('#signin-form');
+const signinNombre = document.querySelector('#signinNombre');
+const signinApellidos = document.querySelector('#signinApellidos');
+const signinEmail = document.querySelector('#signinEmail');
+const signinPassword = document.querySelector('#signinPassword1');
+const repetirPassword = document.querySelector('#signinPassword2');
 window.addEventListener('load', () => {
     formularioLogin.addEventListener('submit', function (e) {
         e.preventDefault();
         enviarFormulario(loginEmail.value, loginPassword.value);
         // enviarFormulario('prueba.prueba@iescamp.es', 'prueba');
     });
-    formularioSingin.addEventListener('submit', function (e) {
+    formulariosignin.addEventListener('submit', function (e) {
         e.preventDefault();
-        registrarUsuario(singinNombre.value, singinApellidos.value, singinEmail.value, singinPassword.value);
+        registrarUsuario(signinNombre.value, signinApellidos.value, signinEmail.value, signinPassword.value);
     });
 });
 
 // FORMULARIO LOGIN
-function enviarFormulario (param1, param2) {
+function enviarFormulario(param1, param2) {
     const datos = new FormData();
     datos.append('opcion', 'SR');
     datos.append('email', param1);
@@ -73,9 +73,9 @@ function enviarFormulario (param1, param2) {
         });
 };
 
-// FORMULARIO SINGIN
+// FORMULARIO signin
 function registrarUsuario (param1, param2, param3, param4) {
-    if (singinPassword.value === repetirPassword.value) {
+    if (signinPassword.value === repetirPassword.value) {
         const datos = new FormData();
         datos.append('opcion', 'RS');
         datos.append('nombre', param1);
@@ -87,7 +87,7 @@ function registrarUsuario (param1, param2, param3, param4) {
             method: 'POST',
             body: datos
         })
-            .then((data) => {
+            .then(() => {
                 // eslint-disable-next-line no-undef
                 Swal.fire({
                     title: 'COOPbyDWC',
