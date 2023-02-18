@@ -1,12 +1,18 @@
 const usuario = sessionStorage.getItem('usuario');
+const idUser = sessionStorage.getItem('idusuario');
 const formSelect = document.querySelector('.form-select');
 const sellForm = document.querySelector('#sell-form');
+const imgSelected = document.querySelector('#img-selected');
+const formFile = document.querySelector('#form-file');
+const inputVendedor = document.querySelector('#vendedor');
 const url = 'php/coop.php';
 
 // USER NAME
 window.addEventListener('load', function () {
     document.querySelector('#navNombreUser').innerHTML = usuario;
+    inputVendedor.setAttribute('value', usuario);
     showCategory();
+    imgPreview();
 });
 
 function showCategory () {
@@ -25,4 +31,9 @@ function showCategory () {
                 formSelect.appendChild(option);
             }
         });
+}
+
+function imgPreview () {
+    formFile.addEventListener('change', imgPreview);
+    imgSelected.src = URL.createObjectURL(event.target.files[0]);
 }

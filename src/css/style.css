@@ -1,7 +1,7 @@
 body {
   background: #223;
 }
-
+/* INDEX */
 #dialog-signin,
 #dialog-login {
   width: 30%;
@@ -25,14 +25,13 @@ main {
   max-width: 50%;
 }
 
+/* GALLERY STOCK.HTML */
 #titulo-venta {
   text-align: center;
   color: azure;
   font-size: 80px;
-  margin-top: 5%;
+  margin-top: 2%;
 }
-
-/* GALLERY STOCK.HTML */
 .gallery-container {
   display: grid;
   grid-gap: 40px 10px;
@@ -40,7 +39,7 @@ main {
   padding: 40px 0;
 }
 
-.gallery-container img {
+#img-article {
   width: 350px;
   height: 350px;
   padding: 15px;
@@ -56,10 +55,8 @@ main {
 }
 
 /* SELL */
-
-#form-sell {
-  width:300px;
-	padding:16px;
-	border-radius:10px;
-	margin:auto;
+#img-selected {
+  border-radius: 2%;
+  max-width: 200px;
+  max-height: 200px;
 }
