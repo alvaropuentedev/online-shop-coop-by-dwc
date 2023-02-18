@@ -2,10 +2,10 @@ const usuario = sessionStorage.getItem('usuario');
 const idUser = sessionStorage.getItem('idusuario');
 const container = document.querySelector('.gallery-container');
 const url = 'php/coop.php';
+
+// USER NAME
 window.addEventListener('load', function () {
     document.querySelector('#navNombreUser').innerHTML = usuario;
-});
-window.addEventListener('load', function () {
     showStock();
 });
 function showStock () {
