@@ -70,11 +70,12 @@ function enviarFormulario (param1, param2) {
                     text: 'EMAIL o PASSWORD incorrecto',
                     icon: 'warning',
                     button: 'Continuar'
-                }).then(function (result) {
+                }).then(function () {
                     window.location = 'index.html';
                 });
             } else if (data != null) {
                 sessionStorage.setItem('usuario', data[0].nombre);
+                sessionStorage.setItem('idusuario', data[0].id);
                 window.location = 'stock.html';
             }
         });
