@@ -2,7 +2,7 @@ body {
   background: #223;
 }
 
-#dialog-singin,
+#dialog-signin,
 #dialog-login {
   width: 30%;
 }
@@ -21,7 +21,8 @@ main {
 }
 
 #titulo-index {
-  font-size: 200px;
+  font-size: 100px;
+  max-width: 50%;
 }
 
 #titulo-venta {
@@ -34,8 +35,8 @@ main {
 /* GALLERY STOCK.HTML */
 .gallery-container {
   display: grid;
-  grid-gap: 40px 20px;
-  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  grid-gap: 40px 10px;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
   padding: 40px 0;
 }
 

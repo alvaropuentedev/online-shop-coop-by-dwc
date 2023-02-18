@@ -1,8 +1,8 @@
 const inicio = document.querySelector('#inicio');
-const singin = document.querySelector('#singin');
+const singin = document.querySelector('#signin');
 const login = document.querySelector('#login');
 const dialogLogin = document.querySelector('#dialog-login');
-const dialogSingin = document.querySelector('#dialog-singin');
+const dialogSingin = document.querySelector('#dialog-signin');
 
 // VISIBLE OR HIDDEN FOR EACH OPCION
 
@@ -10,20 +10,12 @@ inicio.addEventListener('click', () => {
     window.location = 'index.html';
 });
 singin.addEventListener('click', () => {
-    if (dialogLogin.style.visibility === 'visible') {
-        dialogLogin.style.visibility = 'hidden';
-    }
-    if (dialogSingin.style.visibility === 'hidden') {
-        dialogSingin.style.visibility = 'visible';
-    }
+    dialogSingin.setAttribute('open', 'true');
+    dialogLogin.removeAttribute('open');
 });
 login.addEventListener('click', () => {
-    if (dialogLogin.style.visibility === 'hidden') {
-        dialogLogin.style.visibility = 'visible';
-    }
-    if (dialogSingin.style.visibility === 'visible') {
-        dialogSingin.style.visibility = 'hidden';
-    }
+    dialogLogin.setAttribute('open', 'true');
+    dialogSingin.removeAttribute('open');
 });
 
 // LOGIN & SIGIN FORM
