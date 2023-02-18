@@ -1,6 +1,7 @@
 const usuario = sessionStorage.getItem('usuario');
 const idUser = sessionStorage.getItem('idusuario');
 const container = document.querySelector('.gallery-container');
+const url = 'php/coop.php';
 window.addEventListener('load', function () {
     document.querySelector('#navNombreUser').innerHTML = usuario;
 });
@@ -10,7 +11,6 @@ window.addEventListener('load', function () {
 function showStock () {
     const formData = new FormData();
     formData.append('opcion', 'AV');
-    const url = 'php/coop.php';
     fetch(url, {
         method: 'POST',
         body: formData
@@ -55,15 +55,22 @@ function showStock () {
 // BUY FUCTION
 function buyArticle (e) {
     const idArticle = e.target.id;
-
-
-    // eslint-disable-next-line no-undef
-    swal.fire({
-        title: 'COOPbyDWC',
-        text: 'Artículo vendido!',
-        icon: 'success',
-        button: 'Continuar'
-    }).then(function () {
-        window.location = 'stock.html';
-    });
+    const formData = new FormData();
+    formData.append('opcion', 'CA');
+    formData.append('idarticulo', idArticle);
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+        .then(() => {
+            // eslint-disable-next-line no-undef
+            swal.fire({
+                title: 'COOPbyDWC',
+                text: 'Artículo vendido!',
+                icon: 'success',
+                button: 'Continuar'
+            }).then(function () {
+                window.location = 'stock.html';
+            });
+        });
 }
