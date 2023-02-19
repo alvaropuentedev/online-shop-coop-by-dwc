@@ -34,6 +34,17 @@ function showCategory () {
 }
 
 function imgPreview () {
-    formFile.addEventListener('change', imgPreview);
-    imgSelected.src = URL.createObjectURL(event.target.files[0]);
+    formFile.addEventListener('change', function (e) {
+        if (e.target.files[0].type.match('image/*')) {
+            imgSelected.src = URL.createObjectURL(e.target.files[0]);
+        } else {
+            // eslint-disable-next-line no-undef
+            Swal.fire({
+                title: 'COOPbyDWC',
+                text: 'ELIGE UN FORMATO DE IMAGEN CORRECTO (PNG/JPG)',
+                icon: 'warning',
+                button: 'Continuar'
+            });
+        }
+    });
 }
