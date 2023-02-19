@@ -51,40 +51,47 @@
     <form id="sell-form" enctype="multipart/form-data">
         <div id="grid-container" class="container d-grid justify-content-center gap-5 mt-3">
             <div class="row">
+                <!-- SELECT CATEGORY -->
                 <div id="div-select" class="col-6">
                     <label for="form-select" class="form-label fw-bold text-light">Categoría</label>
-                    <select class="form-select">
-                        <option selected>Selecciona una categoría</option>
+                    <select class="form-select" required>
+                        <option value="0" selected>Selecciona una categoría</option>
                     </select>
                 </div>
+                <!-- VENDOR -->
                 <div id="div-vendedor" class="col-6">
                     <label for="vendedor" class="form-label fw-bold text-light">Vendedor</label>
                     <input type="text" id="vendedor" class="form-control" disabled>
                 </div>
             </div>
             <div class="row">
+                <!-- ADD FILE -->
                 <div id="addFile" class="col-6">
                     <label for="formFile" class="form-label fw-bold text-light">Imagen</label>
-                    <input class="form-control" type="file" id="form-file">
+                    <input class="form-control" type="file" id="form-file" required>
                 </div>
+                <!-- IMG PREVIEW -->
                 <div class="col-6 d-grid justify-content-center">
                     <img id="img-selected" src="" class="img-fluid" />
                 </div>
             </div>
             <div class="row">
+                <!-- NAME FOR ARTICLE -->
                 <div id="div-name" class="col-6">
                     <label for="name-article" class="form-label fw-bold text-light">Nombre del artículo</label>
-                    <input type="text" id="name-article" class="form-control">
+                    <input type="text" id="name-article" class="form-control" required>
                 </div>
+                <!-- PRICE -->
                 <div id="div-price" class="col-6">
-                    <label for="price" class="form-label fw-bold text-light">Vendedor</label>
-                    <input type="text" id="price" class="form-control">
+                    <label for="price" class="form-label fw-bold text-light">Precio</label>
+                    <input type="number" id="price" step=".01" class="form-control" required>
                 </div>
             </div>
             <div class="row">
+                <!-- DESCRIPTION -->
                 <div class="col-12">
                     <label for="text-description" class="form-label fw-bold text-light">Descripción</label>
-                    <textarea class="form-control" id="text-description" rows="4"></textarea>
+                    <textarea class="form-control" id="text-description" rows="4" required></textarea>
                 </div>
             </div>
             <div class="row">

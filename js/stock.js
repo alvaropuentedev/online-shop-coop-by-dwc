@@ -26,7 +26,7 @@ function showStock () {
                     // IMG
                     const imgArticle = document.createElement('img');
                     imgArticle.id = 'img-article';
-                    imgArticle.src = 'img/' + articles[i].imagen;
+                    imgArticle.src = 'archivos/' + articles[i].imagen;
                     element.appendChild(imgArticle);
                     // ARTICLE NAME
                     const articleName = document.createElement('h3');
