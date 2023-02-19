@@ -13,6 +13,7 @@ window.addEventListener('load', function () {
     inputVendedor.setAttribute('value', usuario);
     showCategory();
     imgPreview();
+    sellArticle();
 });
 
 function showCategory () {
@@ -47,4 +48,9 @@ function imgPreview () {
             });
         }
     });
+}
+
+// PUT ARTICLE TO SELL
+function sellArticle () {
+    
 }
