@@ -61,7 +61,6 @@ async function imgPreview () {
 
 // PUT ARTICLE TO SELL
 function sellArticle (param1, param2, param3, param4) {
-    console.log(formFile.files[0]);
     if (param1 < 1) {
         // eslint-disable-next-line no-undef
         Swal.fire({
@@ -76,8 +75,8 @@ function sellArticle (param1, param2, param3, param4) {
         formData.append('categoria', param1);
         formData.append('nombre', param2);
         formData.append('precio', param3);
-        formData.append('descripcion', param4);
         formData.append('imagen', formFile.files[0]);
+        formData.append('descripcion', param4);
         formData.append('vendedor', idUser);
         fetch(url, {
             method: 'POST',
