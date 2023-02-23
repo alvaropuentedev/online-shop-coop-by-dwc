@@ -1,21 +1,21 @@
 const inicio = document.querySelector('#inicio');
-const signin = document.querySelector('#signin');
+const signup = document.querySelector('#signup');
 const login = document.querySelector('#login');
 const dialogLogin = document.querySelector('#dialog-login');
-const dialogSignin = document.querySelector('#dialog-signin');
+const dialogsignup = document.querySelector('#dialog-signup');
 
 // VISIBLE OR HIDDEN FOR EACH OPCION
 
 inicio.addEventListener('click', () => {
     window.location = 'index.html';
 });
-signin.addEventListener('click', () => {
-    dialogSignin.setAttribute('open', 'true');
+signup.addEventListener('click', () => {
+    dialogsignup.setAttribute('open', 'true');
     dialogLogin.removeAttribute('open');
 });
 login.addEventListener('click', () => {
     dialogLogin.setAttribute('open', 'true');
-    dialogSignin.removeAttribute('open');
+    dialogsignup.removeAttribute('open');
 });
 
 // LOGIN & SIGIN FORM
@@ -23,22 +23,22 @@ login.addEventListener('click', () => {
 const formularioLogin = document.querySelector('#login-form');
 const loginEmail = document.querySelector('#loginEmail');
 const loginPassword = document.querySelector('#loginPassword');
-// signin
-const formulariosignin = document.querySelector('#signin-form');
-const signinNombre = document.querySelector('#signinNombre');
-const signinApellidos = document.querySelector('#signinApellidos');
-const signinEmail = document.querySelector('#signinEmail');
-const signinPassword = document.querySelector('#signinPassword1');
-const repetirPassword = document.querySelector('#signinPassword2');
+// signup
+const formulariosignup = document.querySelector('#signup-form');
+const signupNombre = document.querySelector('#signupNombre');
+const signupApellidos = document.querySelector('#signupApellidos');
+const signupEmail = document.querySelector('#signupEmail');
+const signupPassword = document.querySelector('#signupPassword1');
+const repetirPassword = document.querySelector('#signupPassword2');
 window.addEventListener('load', () => {
     formularioLogin.addEventListener('submit', function (e) {
         e.preventDefault();
         enviarFormulario(loginEmail.value, loginPassword.value);
         // enviarFormulario('prueba.prueba@iescamp.es', 'prueba');
     });
-    formulariosignin.addEventListener('submit', function (e) {
+    formulariosignup.addEventListener('submit', function (e) {
         e.preventDefault();
-        registrarUsuario(signinNombre.value, signinApellidos.value, signinEmail.value, signinPassword.value);
+        registrarUsuario(signupNombre.value, signupApellidos.value, signupEmail.value, signupPassword.value);
     });
 });
 
@@ -48,7 +48,7 @@ function enviarFormulario (param1, param2) {
     datos.append('opcion', 'SR');
     datos.append('email', param1);
     datos.append('password', param2);
-    const url = 'php/coop.php';
+    const url = 'coop23.php';
     fetch(url, {
         method: 'POST',
         body: datos
@@ -73,9 +73,9 @@ function enviarFormulario (param1, param2) {
         });
 };
 
-// FORMULARIO signin
+// FORMULARIO signup
 function registrarUsuario (param1, param2, param3, param4) {
-    if (signinPassword.value === repetirPassword.value) {
+    if (signupPassword.value === repetirPassword.value) {
         const datos = new FormData();
         datos.append('opcion', 'RS');
         datos.append('nombre', param1);

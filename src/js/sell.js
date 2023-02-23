@@ -8,7 +8,7 @@ const category = document.querySelector('.form-select');
 const articleName = document.querySelector('#name-article');
 const price = document.querySelector('#price');
 const descripcion = document.querySelector('#text-description');
-const url = 'php/coop.php';
+const url = 'coop23.php';
 // ONLOAD
 window.addEventListener('load', function () {
     document.querySelector('#navNombreUser').innerHTML = usuario;
