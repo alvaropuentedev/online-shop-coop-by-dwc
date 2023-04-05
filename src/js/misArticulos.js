@@ -89,6 +89,8 @@ function createGallery (articles, offset, limit) {
         next.style.display = 'none';
     }
 }
+
+// ELIMINATE FUNC
 function elimnarArticulo (e) {
     const idArticle = e.target.id;
     const formData = new FormData();
