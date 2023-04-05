@@ -3,7 +3,7 @@ const idUser = sessionStorage.getItem('idusuario');
 const container = document.querySelector('#gallery-own-container');
 const previous = document.querySelector('#previous');
 const next = document.querySelector('#next');
-const url = 'coop23.php';
+const url = 'php/coop23.php';
 
 let offset = 0;
 const limit = 3;
@@ -68,9 +68,45 @@ function createGallery (articles, offset, limit) {
                 const precioParse = parseFloat(articles[i].precio).toFixed(2);
                 precio.textContent = precioParse + ' €';
                 element.appendChild(precio);
+                // DIV BUTTON
+                const divButton = document.createElement('div');
+                divButton.setAttribute('class', 'div-button');
+                element.appendChild(divButton);
+                // BUTTON
+                const botonEliminar = document.createElement('button');
+                const botonModificar = document.createElement('button');
+                botonEliminar.textContent = 'Eliminar';
+                botonModificar.textContent = 'Modificar';
+                botonEliminar.setAttribute('id', articles[i].id);
+                botonEliminar.setAttribute('class', 'btn btn-primary mb-2');
+                botonModificar.setAttribute('id', articles[i].id);
+                botonModificar.setAttribute('class', 'btn btn-primary ms-2 mb-2');
+                botonEliminar.addEventListener('click', elimnarArticulo);
+                divButton.appendChild(botonEliminar);
             }
         }
     } catch (error) {
         next.style.display = 'none';
     }
+}
+function elimnarArticulo (e) {
+    const idArticle = e.target.id;
+    const formData = new FormData();
+    formData.append('opcion', 'BA');
+    formData.append('idarticulo', idArticle);
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+        .then(() => {
+            // eslint-disable-next-line no-undef
+            swal.fire({
+                title: 'COOPbyDWC',
+                text: 'Artículo eliminado!',
+                icon: 'success',
+                button: 'Continuar'
+            }).then(function () {
+                window.location.reload();
+            });
+        });
 }

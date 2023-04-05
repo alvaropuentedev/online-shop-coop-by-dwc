@@ -3,7 +3,7 @@ const idUser = sessionStorage.getItem('idusuario');
 const container = document.querySelector('.gallery-container');
 const previous = document.querySelector('#previous');
 const next = document.querySelector('#next');
-const url = 'coop23.php';
+const url = 'php/coop23.php';
 
 let offset = 0;
 const limit = 3;
